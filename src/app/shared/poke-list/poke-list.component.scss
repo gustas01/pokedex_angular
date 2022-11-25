@@ -63,13 +63,14 @@ $padding20: rem-calc(20);
         height: rem-calc(90);
         width: rem-calc(110);
 
-        bottom: $padding20;
+        bottom: rem-calc(30);
         right: $padding20;
 
         // background: url('../../../assets/bg/backgroung-list-pokemon.svg') no-repeat;
 
         img {
-          width: rem-calc(60);
+          min-width: rem-calc(60);
+          max-width: rem-calc(80);
         }
       }
     }
