@@ -24,6 +24,10 @@ $padding20: rem-calc(20);
       color: var(--primary-color);
 
       &__status {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
         h2{
           font-size: rem-calc(22);
           font-style: italic;
@@ -51,6 +55,11 @@ $padding20: rem-calc(20);
             margin-bottom: rem-calc(5);
           }
         }
+
+        span{
+          font-size: rem-calc(14);
+          color: gray;
+        }
       }
 
       &__image {
@@ -75,7 +84,7 @@ $padding20: rem-calc(20);
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 540px) {
 
       justify-content: center;
 
@@ -84,11 +93,19 @@ $padding20: rem-calc(20);
 
         &__image{
           img{
-            width: rem-calc(90);
+            max-width: rem-calc(85);
           }
         }
       }
     }
+  }
+
+  .pagination{
+    display: flex;
+    margin: auto;
+    width: 40%;
+    gap: 5px;
+    margin-bottom: rem-calc(20);
   }
 
 }

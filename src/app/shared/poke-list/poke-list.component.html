@@ -2,7 +2,7 @@
 
 <section class="listing">
   <ng-template ngFor let-pokemon [ngForOf]="Pokemons">
-    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
+    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status"><!--pokemon.status-->
       <section class="pokemon__status">
       <h2> {{ pokemon.name }}</h2>
       <ul>
@@ -10,6 +10,7 @@
           {{ value.type.name }}
         </li>
       </ul>
+      <span>Peso: {{ pokemon.status.weight }}</span>
     </section>
 
     <section class="pokemon__image">
@@ -18,5 +19,10 @@
   </a>
   </ng-template>
 </section>
+
+<div class="pagination" *ngIf="Pokemons?.length">
+  <button class="btn" (click)="previousPage()" [disabled]="!previous">Previous</button>
+  <button class="btn" (click)="nextPage()" [disabled]="!next">Next</button>
+</div>
 
 <img src="assets/error.png" alt="Erro na requisição" *ngIf="apiError">
