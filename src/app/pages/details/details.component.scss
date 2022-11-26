@@ -2,7 +2,7 @@
 
 :host {
 	main {
-		margin-top: rem-calc(40);
+		// margin-top: rem-calc(40);
 
 		.pokemon__names {
 			position: relative;
@@ -58,7 +58,7 @@
 
 				background: var(--white);
 
-				min-height: 45vh;
+				min-height: 47vh;
 				margin-top: rem-calc(10);
 
 				padding: rem-calc(50) rem-calc(35) rem-calc(30);
@@ -82,6 +82,10 @@
 						line-height: 130%;
 					}
 				}
+
+        a {
+          margin-top: rem-calc(30);
+        }
 			}
 		}
 

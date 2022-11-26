@@ -25,6 +25,13 @@
           </ol>
         </section>
 
+        <h3>Habilidades</h3>
+
+        <ol>
+          <li *ngFor="let value of pokemon[0].abilities">
+            {{ value.ability.name}}
+          </li>
+        </ol>
         <a [routerLink]="['']" class="btn btn__secondary">
           Voltar
         </a>
