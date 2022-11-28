@@ -10,6 +10,7 @@ import { map, tap } from 'rxjs/operators'
 export class PokeApiService {
   private offset: number = 0
   private url: string = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=100`
+  private urlPokemon: string = `https://pokeapi.co/api/v2/pokemon`
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +37,11 @@ export class PokeApiService {
     )
   }
 
+  getPokemonByName(name: string): Observable<any>{
+    return this.http.get<Observable<any>>(`${this.urlPokemon}/${name}`)
+  }
+
+
   set Offset(value: string){
     if(this.offset + Number(value) >= 0)
       this.offset += Number(value)
@@ -43,7 +49,4 @@ export class PokeApiService {
       this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=100`
   }
 
-  public getLimits(){
-    return this.http.get<any>(this.url)
-  }
 }

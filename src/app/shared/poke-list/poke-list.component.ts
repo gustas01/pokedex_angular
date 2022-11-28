@@ -34,11 +34,20 @@ export class PokeListComponent implements OnInit {
   }
 
   public getSearch(value: string){
-    const filteredPokemons = this.AllPokemons.filter( (res: any) => {
-      return !res.name.indexOf(value.toLowerCase())
+    this.pokeApiService.getPokemonByName(value).subscribe({
+      next: res => {
+        this.Pokemons = [res]
+      }
     })
 
-    this.Pokemons = filteredPokemons;
+
+
+
+    // const filteredPokemons = this.AllPokemons.filter( (res: any) => {
+    //   return !res.name.indexOf(value.toLowerCase())
+    // })
+
+    // this.Pokemons = filteredPokemons;
   }
 
   private disablePagination(){

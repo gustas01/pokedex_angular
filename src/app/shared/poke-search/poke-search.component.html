@@ -1,4 +1,4 @@
-<form>
-  <input type="text" #input (keyup)="search(input.value)" placeholder="Buscar Pokemon...">
+<form #form="ngForm" (ngSubmit)="search(form.value.pokemonName)">
+  <input type="text" name="pokemonName" placeholder="Buscar Pokemon..." ngModel>
   <img src="assets/icons/search.svg" alt="Buscar Pokemon">
 </form>
