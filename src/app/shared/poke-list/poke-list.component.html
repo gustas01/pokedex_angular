@@ -38,8 +38,8 @@
 </section>
 
 <div class="pagination" *ngIf="Pokemons?.length && Pokemons[0]?.url">
-  <button class="btn" (click)="previousPage()" [disabled]="!previous">Previous</button>
-  <button class="btn" (click)="nextPage()" [disabled]="!next">Next</button>
+  <button class="btn" (click)="previousPage()" [disabled]="!previous">Anterior</button>
+  <button class="btn" (click)="nextPage()" [disabled]="!next">Próxima</button>
 </div>
 
 <img src="assets/error.png" alt="Erro na requisição" *ngIf="apiError">

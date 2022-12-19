@@ -72,6 +72,7 @@ export class PokeListComponent implements OnInit {
       }
 
     })
+    window.scrollTo(0,0)
     this.disablePagination()
   }
 
@@ -88,6 +89,7 @@ export class PokeListComponent implements OnInit {
       }
 
     })
+    window.scrollTo(0,0)
     this.disablePagination()
   }
 
